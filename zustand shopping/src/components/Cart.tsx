@@ -17,12 +17,13 @@ import {
 import { ChangeQtyButtons } from "./ChangeQtyButtons";
 
 export const Cart = () => {
-  const { reset, products, removeProduct, total } = useStore(
+  const { reset, products, removeProduct, total, address } = useStore(
     useShallow((state) => ({
       reset: state.reset,
       products: state.products,
       removeProduct: state.removeProduct,
       total: state.total,
+      address: state.address,
     }))
   );
   return (
@@ -56,6 +57,7 @@ export const Cart = () => {
           ))}
         </div>
         <p>Total: {total}$</p>
+        <p>Address: {address}</p>
       </PopoverContent>
     </Popover>
   );
